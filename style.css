@@ -1,0 +1,298 @@
+/* Custom CSS for galaxy background and neon effects */
+
+body {
+
+    font-family: 'Inter', sans-serif;
+
+    background: linear-gradient(135deg, #0a0a0a, #1a0a2a, #0a0a0a); /* Dark space gradient */
+
+    color: #e0e0e0;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow-x: hidden; /* Prevent horizontal scroll */
+
+    position: relative;
+
+}
+
+
+/* Galaxy background elements */
+
+body::before {
+
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: url('https://placehold.co/1920x1080/000000/FFFFFF?text=Galaxy+Background') no-repeat center center / cover; /* Placeholder for galaxy image */
+
+    opacity: 0.3; /* Subtle background */
+
+    z-index: -1;
+
+    animation: galaxy-move 60s linear infinite; /* Slow movement */
+
+}
+
+
+@keyframes galaxy-move {
+
+    0% { background-position: 0% 0%; }
+
+    100% { background-position: 100% 100%; }
+
+}
+
+
+/* Neon text effect */
+
+.neon-text {
+
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff, 0 0 80px #0ff;
+
+    animation: pulse-neon 1.5s infinite alternate;
+
+}
+
+
+/* Pulsing neon animation for title */
+
+@keyframes pulse-neon {
+
+    0% { text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff; }
+
+    100% { text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 60px #0ff; }
+
+}
+
+
+/* Neon border effect for cards/buttons */
+
+.neon-border {
+
+    border: 2px solid;
+
+    border-image: linear-gradient(45deg, #0ff, #f0f, #ff0) 1;
+
+    box-shadow: 0 0 10px #0ff, 0 0 20px #f0f;
+
+    transition: all 0.3s ease-in-out;
+
+}
+
+
+.neon-border:hover {
+
+    box-shadow: 0 0 15px #0ff, 0 0 30px #f0f;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* Neon button glow */
+
+.neon-button {
+
+    background: linear-gradient(45deg, #0ff, #f0f);
+
+    color: #fff;
+
+    box-shadow: 0 0 8px #0ff, 0 0 16px #f0f;
+
+    transition: all 0.3s ease-in-out;
+
+}
+
+
+.neon-button:hover:not(:disabled) {
+
+    background: linear-gradient(45deg, #f0f, #0ff);
+
+    box-shadow: 0 0 12px #0ff, 0 0 24px #f0f;
+
+    transform: translateY(-2px);
+
+}
+
+
+.neon-button:disabled {
+
+    background: #333;
+
+    color: #888;
+
+    cursor: not-allowed;
+
+    box-shadow: none;
+
+}
+
+
+/* Input/Select styling */
+
+.neon-input {
+
+    background-color: #1a1a1a;
+
+    border: 1px solid #0ff;
+
+    color: #e0e0e0;
+
+    box-shadow: 0 0 5px #0ff;
+
+    transition: all 0.2s ease-in-out;
+
+}
+
+
+.neon-input:focus {
+
+    outline: none;
+
+    border-color: #f0f;
+
+    box-shadow: 0 0 8px #f0f;
+
+}
+
+
+/* Custom scrollbar for better aesthetics */
+
+::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+    background: #1a1a1a;
+
+    border-radius: 10px;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background: linear-gradient(45deg, #0ff, #f0f);
+
+    border-radius: 10px;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: linear-gradient(45deg, #f0f, #0ff);
+
+}
+
+
+/* Modal styling */
+
+.modal {
+
+    display: none; /* Hidden by default */
+
+    position: fixed; /* Stay in place */
+
+    z-index: 1000; /* Sit on top */
+
+    left: 0;
+
+    top: 0;
+
+    width: 100%; /* Full width */
+
+    height: 100%; /* Full height */
+
+    overflow: auto; /* Enable scroll if needed */
+
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+}
+
+
+.modal-content {
+
+    background-color: #1a1a1a;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    position: relative;
+
+    width: 90%;
+
+    max-width: 500px;
+
+    text-align: center;
+
+    border: 2px solid;
+
+    border-image: linear-gradient(45deg, #0ff, #f0f) 1;
+
+    box-shadow: 0 0 15px #0ff, 0 0 30px #f0f;
+
+}
+
+
+.close-button {
+
+    color: #aaa;
+
+    position: absolute;
+
+    top: 10px;
+
+    right: 20px;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: color 0.2s;
+
+}
+
+
+.close-button:hover,
+
+.close-button:focus {
+
+    color: #0ff;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+}
